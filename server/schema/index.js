@@ -8,7 +8,8 @@ const {
   GraphQLString,
   GraphQLInt,
   GraphQLSchema,
-  GraphQLList
+  GraphQLList,
+  GraphQLNonNull
 } = graphql
 
 function getUsersURL (parentValue = null, args) {
@@ -26,7 +27,7 @@ function getCompaniesUrl (parentValue = null, args) {
 
 function getUserCompany (parentValue = null, args) {
   log(chalk.red('LOG - Getting company users: '), parentValue, args)
-  return axios.get(`${url}/companies/${parentValue.company}`)
+  return axios.get(`${url}/companies/${parentValue.companyId}`)
   .then(resp => resp.data)
 }
 
@@ -106,6 +107,29 @@ const RootQuery = new GraphQLObjectType({
   }
 })
 
+const mutation = new GraphQLObjectType({
+  name: 'Mutation',
+  fields: {
+    addUser: {
+      type: UserType,
+      args: {
+        firstName: { type: new GraphQLNonNull(GraphQLString) },
+        lastName: { type: new GraphQLNonNull(GraphQLString) },
+        companyId: { type: new GraphQLNonNull(GraphQLInt) }
+      },
+      resolve (parentValue, { firstName, lastName, companyId }) {
+        return axios.post('http://localhost:8000/users', {
+          firstName,
+          lastName,
+          companyId
+        })
+        .then(res => res.data)
+      }
+    }
+  }
+})
+
 module.exports = new GraphQLSchema({
-  query: RootQuery
+  query: RootQuery,
+  mutation
 })
