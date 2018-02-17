@@ -1,0 +1,64 @@
+{
+  "users": [
+    {
+      "id": 1,
+      "firstName" : "Cesar",
+      "lastName" : "Perez",
+      "companyId" : 1
+    },
+    {
+      "id": 2,
+      "firstName" : "Benry",
+      "lastName" : "Vega",
+      "companyId" : 1
+    },
+    {
+      "id": 3,
+      "firstName" : "Emilio",
+      "lastName" : "Perez",
+      "companyId" : 1
+    },
+    {
+      "id": 4,
+      "firstName" : "Rachel",
+      "lastName" : "Perez",
+      "companyId" : 1
+    },
+    {
+      "id": 5,
+      "firstName" : "Carmen",
+      "lastName" : "Nieves",
+      "companyId" : 1
+    },
+    {
+      "id": 6,
+      "firstName" : "Ana",
+      "lastName" : "Vega",
+      "companyId" : 1
+    },
+    {
+      "id": 7,
+      "firstName" : "Andrew",
+      "lastName" : "Siason",
+      "companyId" : 2
+    },
+    {
+      "id" : 8,
+      "firstName" : "Damien",
+      "lastName" : "Scott",
+      "companyId" : 2
+    }
+  ],
+  "companies": [
+    {
+      "id": 1,
+      "name": "BKD",
+      "description": "Web Development Services"
+    },
+    {
+      "id": 2,
+      "name": "TandemSeven",
+      "description": "Full Service UX and Technology consulting firm"
+    }
+  ]
+}

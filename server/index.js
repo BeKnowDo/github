@@ -1,26 +1,27 @@
 const express = require('express')
 const chalk = require('chalk')
 const morgan = require('morgan')
+const path = require('path')
+const expressGraphQL = require('express-graphql')
 const log = console.log
+const schema = require('../server/schema')
 
+const config = { port: process.env.PORT || 5000 }
 const app = express()
-const config = {
-  port: 5000
+
+const router = function (req, res) {
+  res.sendFile(path.join(__dirname, '../public/index.html'))
 }
-
 app.use(morgan('dev'))
+app.use('/graphql', expressGraphQL({
+  schema,
+  graphiql: true
+}))
 
-app.get('/', function (req, res) {
-  res.send(`Development server running on port: ${config.port}`)
-})
+app.get('/', router)
 
 app.listen(config.port, function () {
   log(
-    chalk.blue(`Development server running on port: ${config.port}`),
-    log(chalk`
-      CPU: {red ${cpu.totalPercent}%}
-      RAM: {green ${ram.used / ram.total * 100}%}
-      DISK: {rgb(255,131,0) ${disk.used / disk.total * 100}%}
-    `)
+    chalk.blue(`The magic happens on port: ${config.port}`)
   )
 })

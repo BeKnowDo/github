@@ -1,0 +1,20 @@
+{
+  "port": 5000,
+  "endpoint": "api",
+  "database": {
+    "dev": {
+      "user": "root",
+      "password": "",
+      "database": "graphql",
+      "host": "127.0.0.1",
+      "dialect": "mysql"
+    },
+    "prod": {
+      "user": "root",
+      "password": "",
+      "database": "graphql",
+      "host": "127.0.0.1",
+      "dialect": "mysql"
+    }
+  }
+}
