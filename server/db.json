@@ -43,12 +43,6 @@
       "companyId": 2
     },
     {
-      "id": 8,
-      "firstName": "Damien",
-      "lastName": "Scott",
-      "companyId": 2
-    },
-    {
       "firstName": "Jane",
       "lastName": "Doe",
       "id": 9
@@ -58,12 +52,6 @@
       "lastName": "Doe",
       "companyId": 2,
       "id": 10
-    },
-    {
-      "firstName": "Jane",
-      "lastName": "Doe",
-      "companyId": 2,
-      "id": 11
     },
     {
       "firstName": "Jane",
